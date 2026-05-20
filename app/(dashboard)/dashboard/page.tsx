@@ -10,7 +10,7 @@ import HistoryTab from '@/components/dashboard/HistoryTab';
 import SettingsTab from '@/components/dashboard/SettingsTab';
 
 export default function DashboardPage() {
-  const [tab, setTab] = useState<Tab>('shops');
+  const [tab, setTab] = useState<Tab>('history');
   const router = useRouter();
 
   async function handleLogout() {
@@ -22,22 +22,22 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="border-b border-black px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Scale size={22} strokeWidth={1.5} />
-          <span className="text-sm font-bold tracking-widest uppercase">Weigh Bridge — Dashboard</span>
-        </div>
+      <header className="border-b border-black px-4 md:px-6 py-4 flex items-center justify-between">
+      <div className="flex items-center gap-3">
+        <Scale size={50} strokeWidth={1.5} />
+        <span className="hidden md:block text-lg font-bold tracking-widest uppercase">Weigh Bridge</span>
+      </div>
         <div className="flex items-center gap-3">
           <button
             onClick={() => router.push('/home')}
-            className="flex items-center gap-2 text-xs border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors tracking-widest uppercase"
+            className="flex cursor-pointer items-center gap-2 text-xs border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors tracking-widest uppercase"
           >
             <Home size={14} />
             Home
           </button>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 text-xs border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors tracking-widest uppercase"
+            className="flex cursor-pointer items-center gap-2 text-xs border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors tracking-widest uppercase"
           >
             <LogOut size={14} />
             Logout
@@ -49,8 +49,8 @@ export default function DashboardPage() {
       <div className="flex flex-col lg:flex-row flex-1 border-b border-black">
         <Sidebar active={tab} onChange={setTab} />
         <main className="flex-1 overflow-y-auto">
-          {tab === 'shops' && <ShopsTab />}
           {tab === 'history' && <HistoryTab />}
+          {tab === 'shops' && <ShopsTab />}
           {tab === 'settings' && <SettingsTab />}
         </main>
       </div>

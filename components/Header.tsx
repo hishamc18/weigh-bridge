@@ -22,14 +22,14 @@ export default function Header() {
       <div className="flex items-center gap-3">
         <button
           onClick={() => router.push('/dashboard')}
-          className="flex items-center gap-2 text-xs border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors tracking-widest uppercase"
+          className="flex cursor-pointer items-center gap-2 text-xs border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors tracking-widest uppercase"
         >
           <LayoutDashboard size={14} />
           Dashboard
         </button>
         <button
           onClick={handleLogout}
-          className="flex items-center gap-2 text-xs border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors tracking-widest uppercase"
+          className="flex cursor-pointer items-center gap-2 text-xs border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors tracking-widest uppercase"
         >
           <LogOut size={14} />
           Logout
