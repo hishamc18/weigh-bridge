@@ -16,8 +16,8 @@ export default function Header() {
   return (
     <header className="border-b border-black px-6 py-4 flex items-center justify-between no-print">
       <div className="flex items-center gap-3">
-        <Scale size={22} strokeWidth={1.5} />
-        <span className="text-sm font-bold tracking-widest uppercase">Weigh Bridge</span>
+        <Scale size={50} strokeWidth={1.5} />
+        <span className="hidden md:block text-lg font-bold tracking-widest uppercase">Weigh Bridge</span>
       </div>
       <div className="flex items-center gap-3">
         <button

@@ -22,9 +22,8 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 px-6 py-8 max-w-6xl mx-auto w-full">
+      <main className="flex-1 px-4 md:px-6 py-8 max-w-6xl mx-auto w-full">
         <div className="mb-6">
-          <h1 className="text-xs font-bold tracking-widest uppercase text-neutral-400">Home</h1>
           <h2 className="text-lg font-bold tracking-tight mt-1">Create Bill</h2>
         </div>
 

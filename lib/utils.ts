@@ -3,12 +3,10 @@ export function formatDateTime(date?: Date | string): string {
   const dd = String(d.getDate()).padStart(2, '0');
   const mm = String(d.getMonth() + 1).padStart(2, '0');
   const yyyy = d.getFullYear();
-  const hh = String(d.getHours()).padStart(2, '0');
   const min = String(d.getMinutes()).padStart(2, '0');
-  const ss = String(d.getSeconds()).padStart(2, '0');
   const ampm = d.getHours() >= 12 ? 'PM' : 'AM';
   const hh12 = String(d.getHours() % 12 || 12).padStart(2, '0');
-  return `${dd}-${mm}-${yyyy} ${hh12}:${min}:${ss} ${ampm}`;
+  return `${dd}-${mm}-${yyyy} ${hh12}:${min} ${ampm}`;
 }
 
 export function nowDateTimeLocal(): string {
@@ -25,7 +23,6 @@ export function toDisplayDateTime(isoOrLocal: string): string {
 }
 
 export function generateBillNo(lastNo?: string): string {
-  // Will be handled server-side with DB check; this is a helper
   const num = lastNo ? parseInt(lastNo.replace(/\D/g, ''), 10) + 1 : 10001;
   return String(num);
 }
